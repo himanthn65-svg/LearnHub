@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LearnHub - Admin User Management</title>
+     <link rel="icon" href="favicon/lh.jpeg">
+
+<style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #111827,
+                    #020617
+                );
+
+            color: #ffffff;
+
+            min-height: 100vh;
+
+            padding: clamp(12px, 4vw, 30px);
+
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: clamp(20px, 5vw, 30px);
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .header h1 {
+
+            font-size: clamp(20px, 6vw, 32px);
+
+            margin-bottom: 8px;
+
+            line-height: 1.2;
+
+        }
+
+
+        .header p {
+
+            color: #94a3b8;
+
+            font-size: clamp(12px, 2vw, 15px);
+
+            width: 100%;
+
+        }
+
+
+        .back-btn {
+
+            text-decoration: none;
+
+            color: white;
+
+            background: #334155;
+
+            padding: clamp(10px, 2vw, 12px) clamp(14px, 3vw, 20px);
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+
+            font-size: clamp(12px, 2vw, 15px);
+
+            min-height: 44px;
+
+            display: flex;
+
+            align-items: center;
+
+            white-space: nowrap;
+
+        }
+
+
+        .back-btn:hover {
+
+            background: #475569;
+
+        }
+
+
+        /* =====================================================
+           STAT CARD
+        ===================================================== */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(clamp(140px, 20vw, 220px), 1fr)
+                );
+
+            gap: clamp(12px, 3vw, 20px);
+
+            margin-bottom: clamp(20px, 5vw, 30px);
+
+        }
+
+
+        .stat-card {
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.1);
+
+            border-radius: 15px;
+
+            padding: clamp(16px, 4vw, 25px);
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+
+        }
+
+
+        .stat-card:hover {
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        .stat-card h3 {
+
+            color: #94a3b8;
+
+            font-size: clamp(12px, 2vw, 15px);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .stat-card strong {
+
+            font-size: clamp(24px, 6vw, 36px);
+
+            color: #60a5fa;
+
+            display: block;
+
+        }
+
+
+        /* =====================================================
+           ADD USER CARD
+        ===================================================== */
+
+        .card {
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.1);
+
+            border-radius: 15px;
+
+            padding: clamp(16px, 4vw, 25px);
+
+            margin-bottom: clamp(20px, 5vw, 30px);
+
+            backdrop-filter: blur(10px);
+
+        }
+
+
+        .card h2 {
+
+            margin-bottom: clamp(14px, 3vw, 20px);
+
+            font-size: clamp(18px, 5vw, 24px);
+
+        }
+
+
+        .form {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(clamp(140px, 18vw, 200px), 1fr)
+                );
+
+            gap: clamp(12px, 2vw, 15px);
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: clamp(10px, 2vw, 13px);
+
+            border-radius: 8px;
+
+            border:
+                1px solid
+                #334155;
+
+            background: #0f172a;
+
+            color: white;
+
+            outline: none;
+
+            font-size: clamp(12px, 2vw, 15px);
+
+            min-height: 44px;
+
+            transition: 0.3s;
+
+        }
+
+
+        input:focus {
+
+            border-color: #3b82f6;
+
+        }
+
+
+        .add-btn {
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2563eb;
+
+            color: white;
+
+            padding: clamp(10px, 2vw, 13px) clamp(14px, 3vw, 20px);
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            font-size: clamp(12px, 2vw, 15px);
+
+            min-height: 44px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            white-space: nowrap;
+
+        }
+
+
+        .add-btn:hover {
+
+            background: #1d4ed8;
+
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .message {
+
+            margin-top: 15px;
+
+            min-height: 20px;
+
+            font-weight: bold;
+
+            font-size: clamp(12px, 2vw, 15px);
+
+        }
+
+
+        .message.success {
+
+            color: #4ade80;
+
+        }
+
+
+        .message.error {
+
+            color: #f87171;
+
+        }
+
+
+        /* =====================================================
+           USERS TABLE
+        ===================================================== */
+
+        .table-container {
+
+            overflow-x: auto;
+
+            -webkit-overflow-scrolling: touch;
+
+            border-radius: 12px;
+
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 100%;
+
+        }
+
+
+        th {
+
+            background: #1e293b;
+
+            color: #cbd5e1;
+
+            text-align: left;
+
+            padding: clamp(11px, 2vw, 15px);
+
+            font-size: clamp(12px, 2vw, 14px);
+
+        }
+
+
+        td {
+
+            padding: clamp(11px, 2vw, 15px);
+
+            border-bottom:
+                1px solid
+                #334155;
+
+            color: #e2e8f0;
+
+            font-size: clamp(12px, 2vw, 14px);
+
+        }
+
+
+        tr:hover {
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+        }
+
+
+        .delete-btn {
+
+            background: #dc2626;
+
+            color: white;
+
+            border: none;
+
+            padding: clamp(7px, 1.5vw, 8px) clamp(11px, 2vw, 14px);
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            font-size: clamp(11px, 1.5vw, 13px);
+
+            min-height: 36px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .delete-btn:hover {
+
+            background: #b91c1c;
+
+        }
+
+
+        .empty {
+
+            text-align: center;
+
+            color: #94a3b8;
+
+            padding: clamp(20px, 5vw, 30px);
+
+            font-size: clamp(13px, 2vw, 16px);
+
+        }
+
+
+        .error {
+
+            text-align: center;
+
+            color: #f87171;
+
+            padding: clamp(20px, 5vw, 30px);
+
+            font-size: clamp(13px, 2vw, 16px);
+
+        }
+
+
+        /* ================= COPYRIGHT CENTER ================= */
+
+        .admin-users-copyright {
+            width: 100%;
+            text-align: center !important;
+            display: block;
+            margin: 0 auto;
+            padding: clamp(18px, 4vw, 25px) clamp(10px, 3vw, 20px);
+            box-sizing: border-box;
+        }
+
+        .admin-users-copyright p {
+            width: 100%;
+            text-align: center !important;
+            margin: 0 auto;
+            font-size: clamp(12px, 2vw, 14px);
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - EXTRA SMALL (320px - 380px)
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 14px;
+            }
+
+            .stat-card h3 {
+                font-size: 11px;
+            }
+
+            .stat-card strong {
+                font-size: 22px;
+            }
+
+            .card {
+                padding: 14px;
+            }
+
+            .card h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .form {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            input {
+                padding: 10px;
+                font-size: 13px;
+                min-height: 42px;
+            }
+
+            .add-btn {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 13px;
+                min-height: 42px;
+            }
+
+            .table-container {
+                border-radius: 8px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px 6px;
+                font-size: 11px;
+            }
+
+            .delete-btn {
+                padding: 6px 10px;
+                font-size: 11px;
+                min-height: 34px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - SMALL (381px - 480px)
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 14px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 22px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .form {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .add-btn {
+                width: 100%;
+            }
+
+            th, td {
+                padding: 10px 8px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - MOBILE (481px - 620px)
+        ===================================================== */
+
+        @media (max-width: 620px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 13px;
+            }
+
+            .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .stat-card {
+                padding: 16px;
+            }
+
+            .card {
+                padding: 16px;
+            }
+
+            .form {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .add-btn {
+                width: 100%;
+            }
+
+            table {
+                min-width: 600px;
+            }
+
+            th, td {
+                padding: 11px 10px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - TABLET (621px - 768px)
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .header {
+                margin-bottom: 28px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .form {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .add-btn {
+                grid-column: 1 / -1;
+            }
+
+            th, td {
+                padding: 12px 11px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - MEDIUM TABLET (769px - 1000px)
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .form {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - LARGE TABLET (1001px - 1100px)
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .form {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - DESKTOP (1101px+)
+        ===================================================== */
+
+        @media (min-width: 1101px) {
+
+            body {
+                padding: 30px;
+            }
+
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+            }
+
+            .form {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+        }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- ==================================================
+             HEADER
+        ================================================== -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>
+                    Admin User Management
+                </h1>
+
+                <p>
+                    Manage LearnHub registered users
+                </p>
+
+            </div>
+
+
+            <a
+                href="admin.html"
+                class="back-btn"
+            >
+                ← Back to Admin
+            </a>
+
+        </div>
+
+
+        <!-- ==================================================
+             TOTAL USERS
+        ================================================== -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <h3>
+                    Total Users
+                </h3>
+
+                <strong id="totalUsers">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             ADD USER
+        ================================================== -->
+
+        <div class="card">
+
+            <h2>
+                Add New User
+            </h2>
+
+
+            <div class="form">
+
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                >
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                >
+
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                >
+
+
+                <button
+                    class="add-btn"
+                    onclick="addUser()"
+                >
+                    + Add User
+                </button>
+
+
+            </div>
+
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             USERS LIST
+        ================================================== -->
+
+        <div class="card">
+
+            <h2>
+                All Users
+            </h2>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Username
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Profile
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="usersTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="empty"
+                            >
+                                Loading users...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ======================================================
+         JAVASCRIPT
+    ======================================================= -->
+
+    <script src="js/admin-users.js"></script>
+<!-- ================= FOOTER ================= -->
+
+<footer class="admin-users-copyright">
+    <p>© 2026 Lhteam@14. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>

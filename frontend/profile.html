@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profile | LearnHub</title>
+
+    <meta
+        name="description"
+        content="Manage your LearnHub profile and view your learning statistics."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon/lh.jpeg">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================== NAVBAR ==================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="dashboard.html">
+                LearnHub
+            </a>
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="categories.html">
+                Quizzes
+            </a>
+
+            <a href="history.html">
+                History
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="btn btn-outline"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================== PROFILE PAGE ==================== -->
+
+    <main class="profile-page">
+
+
+        <!-- ==================== PROFILE HEADER ==================== -->
+
+        <section class="profile-header">
+
+            <div>
+
+                <span class="section-label">
+                    MY PROFILE
+                </span>
+
+                <h1>
+                    Your Profile
+                </h1>
+
+                <p>
+                    Manage your profile and keep track of your learning journey.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================== PROFILE CARD ==================== -->
+
+        <section class="profile-main-card">
+
+
+            <!-- ==================== PROFILE PICTURE ==================== -->
+
+            <div class="profile-picture-section">
+
+                <div class="profile-picture-wrapper">
+
+                    <img
+                        id="profileImage"
+                        src=""
+                        alt="Profile picture"
+                    >
+
+                    <div
+                        id="profileImageFallback"
+                        class="profile-image-fallback"
+                    >
+                        U
+                    </div>
+
+                </div>
+
+
+                <div class="profile-picture-actions">
+
+                    <label
+                        for="profileImageInput"
+                        class="btn btn-primary"
+                    >
+                        Add / Change Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="profileImageInput"
+                        accept="image/jpeg,image/png,image/webp"
+                        hidden
+                    >
+
+
+                    <button
+                        type="button"
+                        id="removeProfileImage"
+                        class="btn btn-secondary"
+                    >
+                        Remove Photo
+                    </button>
+
+                </div>
+
+
+                <p class="profile-picture-note">
+                    JPG, PNG or WebP image recommended. Maximum 5 MB.
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================== PROFILE INFORMATION ==================== -->
+
+            <div class="profile-information">
+
+                <div class="profile-info-header">
+
+                    <span class="section-label">
+                        ACCOUNT INFORMATION
+                    </span>
+
+                    <h2>
+                        Personal Details
+                    </h2>
+
+                </div>
+
+
+                <form id="profileForm">
+
+
+                    <!-- ==================== USERNAME ==================== -->
+
+                    <div class="form-group">
+
+                        <label for="profileUsername">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="profileUsername"
+                            name="username"
+                            placeholder="Enter your username"
+                            maxlength="50"
+                            required
+                        >
+
+                        <small>
+                            You can change your username.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- ==================== EMAIL ==================== -->
+
+                    <div class="form-group">
+
+                        <label for="profileEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="profileEmail"
+                            name="email"
+                            placeholder="Your email"
+                            readonly
+                        >
+
+                        <small>
+                            Email cannot be changed.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- ==================== ABOUT ==================== -->
+
+                    <div class="form-group">
+
+                        <label for="profileAbout">
+                            About
+                        </label>
+
+                        <textarea
+                            id="profileAbout"
+                            name="about"
+                            rows="5"
+                            maxlength="500"
+                            placeholder="Tell us something about yourself..."
+                        ></textarea>
+
+                        <small>
+                            Maximum 500 characters.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- ==================== MESSAGE ==================== -->
+
+                    <div
+                        id="profileMessage"
+                        class="form-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+
+
+                    <!-- ==================== SAVE ==================== -->
+
+                    <button
+                        type="submit"
+                        id="saveProfileButton"
+                        class="btn btn-primary"
+                    >
+                        Save Profile
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================== STATISTICS ==================== -->
+
+        <section class="profile-statistics">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    YOUR PERFORMANCE
+                </span>
+
+                <h2>
+                    Learning Statistics
+                </h2>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+
+                <!-- Quizzes -->
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        Q
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            Quizzes Attempted
+                        </span>
+
+                        <strong id="profileTotalQuizzes">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Average -->
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        %
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            Average Score
+                        </span>
+
+                        <strong id="profileAverageScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Best -->
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        ★
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            Best Score
+                        </span>
+
+                        <strong id="profileBestScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Accuracy -->
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        A
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            Accuracy
+                        </span>
+
+                        <strong id="profileAccuracy">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Points -->
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        P
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span class="stat-label">
+                            Total Points
+                        </span>
+
+                        <strong id="profileTotalPoints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h3>
+                    LearnHub
+                </h3>
+
+                <p>
+                    Where Learning Becomes Mastery.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="categories.html">
+                    Quizzes
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Lhteam@14. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

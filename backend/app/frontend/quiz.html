@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | LearnHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Quiz Header -->
+    <header>
+        <div class="logo">LearnHub</div>
+
+        <div class="quiz-info">
+            <span id="quiz-category">Programming</span>
+            <span id="quiz-subject">Python</span>
+            <span id="quiz-level">Basic</span>
+        </div>
+
+        <div class="quiz-progress">
+            Question <span id="current-question">1</span>
+            /
+            <span id="total-questions">10</span>
+        </div>
+    </header>
+
+
+    <!-- Quiz Main Section -->
+    <main>
+
+        <section class="quiz-container">
+
+            <!-- Question -->
+            <div class="question-card">
+
+                <p class="question-number">
+                    Question <span id="question-number">1</span>
+                </p>
+
+                <h1 id="question-text">
+                    Loading question...
+                </h1>
+
+            </div>
+
+
+            <!-- Answer Options -->
+            <div class="options-container">
+
+                <button class="option" data-answer="A">
+                    <span class="option-label">A</span>
+                    <span id="option-a">Option A</span>
+                </button>
+
+                <button class="option" data-answer="B">
+                    <span class="option-label">B</span>
+                    <span id="option-b">Option B</span>
+                </button>
+
+                <button class="option" data-answer="C">
+                    <span class="option-label">C</span>
+                    <span id="option-c">Option C</span>
+                </button>
+
+                <button class="option" data-answer="D">
+                    <span class="option-label">D</span>
+                    <span id="option-d">Option D</span>
+                </button>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <div class="quiz-navigation">
+
+                <button id="next-button">
+                    Next
+                </button>
+
+                <button id="submit-button">
+                    Submit Quiz
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Lhteam@14. All rights reserved.</p>
+    </footer>
+
+
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

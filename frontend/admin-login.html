@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="icon"
+        href="favicon/lh.jpeg"
+    >
+
+    <title>Admin Login | LearnHub</title>
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <nav>
+
+            <a href="login.html">
+                User Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= ADMIN LOGIN ================= -->
+
+    <main>
+
+        <section class="auth-container">
+
+            <div class="auth-card">
+
+                <div class="auth-heading">
+
+                    <p class="admin-label">
+                        ADMINISTRATOR
+                    </p>
+
+                    <h1>
+                        Admin Login
+                    </h1>
+
+                    <p>
+                        Sign in to manage LearnHub.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="admin-login-form">
+
+                    <!-- Username -->
+
+                    <div class="form-group">
+
+                        <label for="admin-username">
+                            Admin Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="admin-username"
+                            placeholder="Enter admin username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="admin-password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="admin-password"
+                            placeholder="Enter admin password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Login Button -->
+
+                    <button
+                        type="submit"
+                        id="admin-login-button"
+                    >
+                        Login as Admin
+                    </button>
+
+
+                    <!-- Message -->
+
+                    <div
+                        id="admin-login-message"
+                        class="form-message"
+                    ></div>
+
+                </form>
+
+
+                <div class="auth-footer">
+
+                    <p>
+                        User?
+                        <a href="login.html">
+                            Login here
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Lhteam@14. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ADMIN LOGIN JAVASCRIPT -->
+
+    <script src="js/admin-login.js"></script>
+
+</body>
+
+</html>

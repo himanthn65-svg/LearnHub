@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Quiz History | LearnHub</title>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="categories.html">Quizzes</a>
+            <a href="history.html">History</a>
+            <a href="profile.html">Profile</a>
+
+            <button id="logout-button">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <section class="history-container">
+
+            <!-- Page Heading -->
+            <div class="history-heading">
+
+                <p class="page-label">
+                    QUIZ HISTORY
+                </p>
+
+                <h1>
+                    Your Quiz History
+                </h1>
+
+                <p>
+                    Track your previous attempts, scores and performance.
+                </p>
+
+            </div>
+
+
+            <!-- ================= SUMMARY ================= -->
+            <section class="history-summary">
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Attempts
+                    </span>
+
+                    <strong id="total-attempts">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span>
+                        Average Score
+                    </span>
+
+                    <strong id="average-score">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span>
+                        Best Score
+                    </span>
+
+                    <strong id="best-score">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Points
+                    </span>
+
+                    <strong id="total-points">
+                        0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FILTER ================= -->
+            <section class="history-card">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Filter Attempts
+                    </h2>
+
+                    <p>
+                        Find a previous quiz attempt quickly.
+                    </p>
+
+                </div>
+
+
+                <div class="history-filters">
+
+                    <div class="form-group">
+
+                        <label for="history-category">
+                            Category
+                        </label>
+
+                        <select id="history-category">
+
+                            <option value="">
+                                All Categories
+                            </option>
+
+                            <option value="Programming">
+                                Programming
+                            </option>
+
+                            <option value="Web Development">
+                                Web Development
+                            </option>
+
+                            <option value="AI & ML">
+                                AI & ML
+                            </option>
+
+                            <option value="Database">
+                                Database
+                            </option>
+
+                            <option value="Attitude">
+                                Attitude
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="history-level">
+                            Level
+                        </label>
+
+                        <select id="history-level">
+
+                            <option value="">
+                                All Levels
+                            </option>
+
+                            <option value="Basic">
+                                Basic
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Advanced">
+                                Advanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="filter-history-button"
+                    >
+                        Apply Filter
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= HISTORY TABLE ================= -->
+            <section class="history-card">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Previous Attempts
+                    </h2>
+
+                    <p>
+                        Your completed quizzes will appear here.
+                    </p>
+
+                </div>
+
+
+                <div class="history-table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Subject
+                                </th>
+
+                                <th>
+                                    Level
+                                </th>
+
+                                <th>
+                                    Questions
+                                </th>
+
+                                <th>
+                                    Correct
+                                </th>
+
+                                <th>
+                                    Score
+                                </th>
+
+                                <th>
+                                    Points
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="history-table-body">
+
+                            <tr>
+
+                                <td colspan="7">
+                                    Loading quiz history...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Empty State -->
+                <div
+                    id="history-empty"
+                    class="empty-state"
+                    style="display: none;"
+                >
+
+                    <h3>
+                        No Quiz Attempts Yet
+                    </h3>
+
+                    <p>
+                        Complete your first quiz and your results will appear here.
+                    </p>
+
+                    <a href="categories.html">
+                        Start a Quiz
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>
+            © 2026 Lhteam@14. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/history.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

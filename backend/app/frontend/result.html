@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Quiz Result | LearnHub</title>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="categories.html">Quizzes</a>
+            <a href="history.html">History</a>
+            <a href="profile.html">Profile</a>
+
+            <button id="logout-button">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <section class="result-container">
+
+            <!-- Result Heading -->
+            <div class="result-heading">
+
+                <p class="page-label">
+                    QUIZ COMPLETED
+                </p>
+
+                <h1>
+                    Your Quiz Result
+                </h1>
+
+                <p id="result-message">
+                    Great job! Here is your performance.
+                </p>
+
+            </div>
+
+
+            <!-- ================= SCORE ================= -->
+            <section class="score-card">
+
+                <div class="score-circle">
+
+                    <span id="score">
+                        0%
+                    </span>
+
+                    <small>
+                        Score
+                    </small>
+
+                </div>
+
+
+                <div class="score-details">
+
+                    <h2 id="result-subject">
+                        Quiz
+                    </h2>
+
+                    <p id="result-level">
+                        Level
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PERFORMANCE ================= -->
+            <section class="performance-grid">
+
+                <div class="performance-card">
+
+                    <span>
+                        Total Questions
+                    </span>
+
+                    <strong id="total-questions">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <span>
+                        Correct Answers
+                    </span>
+
+                    <strong id="correct-answers">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <span>
+                        Wrong Answers
+                    </span>
+
+                    <strong id="wrong-answers">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <span>
+                        Points Earned
+                    </span>
+
+                    <strong id="points-earned">
+                        0
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RESULT DETAILS ================= -->
+            <section class="result-card">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Answer Review
+                    </h2>
+
+                    <p>
+                        Review your answers and learn from your mistakes.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="answer-review"
+                    class="answer-review"
+                >
+
+                    <!-- Results will be inserted by JavaScript -->
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ACTIONS ================= -->
+            <section class="result-actions">
+
+                <a
+                    href="categories.html"
+                    id="try-again-button"
+                >
+                    Try Another Quiz
+                </a>
+
+
+                <a
+                    href="history.html"
+                    id="history-button"
+                >
+                    View History
+                </a>
+
+
+                <a
+                    href="dashboard.html"
+                    id="dashboard-button"
+                >
+                    Back to Dashboard
+                </a>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>
+            © 2026 Lhteam@14. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/result.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

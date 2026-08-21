@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | LearnHub</title>
+
+    <meta
+        name="description"
+        content="Create your LearnHub account and start your learning journey."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="favicon/lh.jpeg">
+
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html">LearnHub</a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="login.html" class="btn btn-outline">
+                Login
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- ==================== REGISTER PAGE ==================== -->
+
+    <main class="auth-page">
+
+        <section class="auth-container">
+
+            <!-- Left Side -->
+
+            <div class="auth-info">
+
+                <span class="section-label">
+                    JOIN LEARNHUB
+                </span>
+
+                <h1>
+                    Start Your
+                    <span>Learning Journey</span>
+                </h1>
+
+                <p>
+                    Create your free LearnHub account and begin testing,
+                    improving, and mastering your technical knowledge.
+                </p>
+
+
+                <div class="auth-benefits">
+
+                    <div class="auth-benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>Practice Your Skills</h3>
+                            <p>
+                                Challenge yourself with interactive quizzes.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>Track Your Progress</h3>
+                            <p>
+                                Monitor your scores and quiz performance.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3>Improve Every Day</h3>
+                            <p>
+                                Move from Basic to Advanced challenges.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Registration Form -->
+
+            <div class="auth-card">
+
+                <div class="auth-card-header">
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <p>
+                        Enter your details to get started.
+                    </p>
+
+                </div>
+
+
+                <form id="registerForm" class="auth-form">
+
+                    <!-- Username -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="confirmPasswordToggle"
+                                aria-label="Show confirm password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Terms -->
+
+                    <div class="form-check">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        <label for="terms">
+                            I agree to the LearnHub terms and conditions.
+                        </label>
+
+                    </div>
+
+
+                    <!-- Error / Success Message -->
+
+                    <div
+                        id="registerMessage"
+                        class="form-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary auth-submit"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+                    <span>Already have an account?</span>
+                </div>
+
+
+                <a
+                    href="login.html"
+                    class="btn btn-secondary auth-secondary-btn"
+                >
+                    Login to LearnHub
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>LearnHub</h3>
+
+                <p>
+                    Where Learning Becomes Mastery.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#categories">
+                    Categories
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Lhteam@14. All rights reserved.
+            </p>
+        </div>
+
+    </footer>
+<script src="js/register.js"></script>
+
+</body>
+</html>

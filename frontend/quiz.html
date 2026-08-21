@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Quiz | LearnHub</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="icon"
+        href="favicon/lh.jpeg"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         QUIZ HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+
+        <div class="quiz-info">
+
+            <span id="quiz-category">
+                Programming
+            </span>
+
+            <span id="quiz-subject">
+                Python
+            </span>
+
+            <span id="quiz-level">
+                Basic
+            </span>
+
+        </div>
+
+
+        <div class="quiz-progress">
+
+            Question
+
+            <span id="current-question">
+                1
+            </span>
+
+            /
+
+            <span id="total-questions">
+                50
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN QUIZ
+    ====================================================== -->
+
+    <main>
+
+        <section class="quiz-container">
+
+
+            <!-- =================================================
+                 QUESTION CARD
+            ================================================== -->
+
+            <div class="question-card">
+
+                <p class="question-number">
+
+                    Question
+
+                    <span id="question-number">
+                        1
+                    </span>
+
+                </p>
+
+
+                <h1 id="question-text">
+
+                    Loading question...
+
+                </h1>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ANSWER OPTIONS
+            ================================================== -->
+
+            <div class="options-container">
+
+
+                <button
+                    type="button"
+                    class="option"
+                    data-answer="A"
+                >
+
+                    <span class="option-label">
+                        A
+                    </span>
+
+                    <span id="option-a">
+                        Option A
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="option"
+                    data-answer="B"
+                >
+
+                    <span class="option-label">
+                        B
+                    </span>
+
+                    <span id="option-b">
+                        Option B
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="option"
+                    data-answer="C"
+                >
+
+                    <span class="option-label">
+                        C
+                    </span>
+
+                    <span id="option-c">
+                        Option C
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    class="option"
+                    data-answer="D"
+                >
+
+                    <span class="option-label">
+                        D
+                    </span>
+
+                    <span id="option-d">
+                        Option D
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 QUIZ NAVIGATION
+            ================================================== -->
+
+            <div class="quiz-navigation">
+
+
+                <!-- NEXT -->
+
+                <button
+                    type="button"
+                    id="next-button"
+                >
+
+                    Next
+
+                </button>
+
+
+
+                <!-- QUIT QUIZ -->
+
+                <button
+                    type="button"
+                    id="quit-button"
+                >
+
+                    Quit Quiz
+
+                </button>
+
+
+
+                <!-- SUBMIT ONLY ON LAST QUESTION -->
+
+                <button
+                    type="button"
+                    id="submit-button"
+                    style="display: none;"
+                >
+
+                    Submit Quiz
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Lhteam@14. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/app.js"></script>
+
+    <script src="js/quiz.js"></script>
+
+
+</body>
+
+</html>

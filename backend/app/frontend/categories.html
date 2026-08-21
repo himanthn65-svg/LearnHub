@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Quiz Categories | LearnHub</title>
+
+    <meta
+        name="description"
+        content="Choose a LearnHub quiz category and difficulty level."
+    >
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================== NAVBAR ==================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="dashboard.html">
+                LearnHub
+            </a>
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="categories.html">
+                Quizzes
+            </a>
+
+            <a href="history.html">
+                History
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="btn btn-outline"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================== CATEGORY PAGE ==================== -->
+
+    <main class="categories-page">
+
+
+        <!-- Page Header -->
+
+        <section class="categories-header">
+
+            <span class="section-label">
+                QUIZ CENTER
+            </span>
+
+            <h1>
+                Choose Your
+                <span>Challenge</span>
+            </h1>
+
+            <p>
+                Select a category and test your knowledge.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================== CATEGORIES ==================== -->
+
+        <section class="categories-section">
+
+            <div class="category-grid">
+
+
+                <!-- Programming -->
+
+                <article
+                    class="category-card"
+                    data-category="Programming"
+                >
+
+                    <div class="category-card-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div class="category-card-content">
+
+                        <h2>
+                            Programming
+                        </h2>
+
+                        <p>
+                            Master programming concepts and problem solving.
+                        </p>
+
+                        <span>
+                            C • Java • Python
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="category-select-btn"
+                        data-category="Programming"
+                    >
+                        Explore →
+                    </button>
+
+                </article>
+
+
+
+                <!-- Web Development -->
+
+                <article
+                    class="category-card"
+                    data-category="Web Development"
+                >
+
+                    <div class="category-card-icon">
+                        WEB
+                    </div>
+
+                    <div class="category-card-content">
+
+                        <h2>
+                            Web Development
+                        </h2>
+
+                        <p>
+                            Build your knowledge of modern web technologies.
+                        </p>
+
+                        <span>
+                            HTML • CSS • JavaScript • React
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="category-select-btn"
+                        data-category="Web Development"
+                    >
+                        Explore →
+                    </button>
+
+                </article>
+
+
+
+                <!-- AI & ML -->
+
+                <article
+                    class="category-card"
+                    data-category="AI & ML"
+                >
+
+                    <div class="category-card-icon">
+                        AI
+                    </div>
+
+                    <div class="category-card-content">
+
+                        <h2>
+                            AI &amp; ML
+                        </h2>
+
+                        <p>
+                            Test your understanding of artificial intelligence.
+                        </p>
+
+                        <span>
+                            ML • Deep Learning • NLP
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="category-select-btn"
+                        data-category="AI & ML"
+                    >
+                        Explore →
+                    </button>
+
+                </article>
+
+
+
+                <!-- Database -->
+
+                <article
+                    class="category-card"
+                    data-category="Database"
+                >
+
+                    <div class="category-card-icon">
+                        DB
+                    </div>
+
+                    <div class="category-card-content">
+
+                        <h2>
+                            Database
+                        </h2>
+
+                        <p>
+                            Challenge your database and data management skills.
+                        </p>
+
+                        <span>
+                            MySQL • MongoDB
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="category-select-btn"
+                        data-category="Database"
+                    >
+                        Explore →
+                    </button>
+
+                </article>
+
+
+
+                <!-- Aptitude -->
+
+                <article
+                    class="category-card"
+                    data-category="Attitude"
+                >
+
+                    <div class="category-card-icon">
+                        APT
+                    </div>
+
+                    <div class="category-card-content">
+
+                        <h2>
+                            Aptitude
+                        </h2>
+
+                        <p>
+                            Improve your reasoning and problem-solving ability.
+                        </p>
+
+                        <span>
+                            Reasoning • Aptitude
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="category-select-btn"
+                        data-category="Attitude"
+                    >
+                        Explore →
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================== LEVEL SELECTION ==================== -->
+
+        <section
+            id="levelSelection"
+            class="level-selection"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    DIFFICULTY
+                </span>
+
+                <h2>
+                    Select Your Level
+                </h2>
+
+                <p id="selectedCategoryText">
+                    Choose a difficulty level.
+                </p>
+
+            </div>
+
+
+            <div class="level-grid">
+
+
+                <!-- Basic -->
+
+                <button
+                    type="button"
+                    class="level-card"
+                    data-level="Basic"
+                >
+
+                    <span class="level-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Basic
+                        </h3>
+
+                        <p>
+                            Build your fundamentals.
+                        </p>
+
+                    </div>
+
+                    <span class="level-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <!-- Intermediate -->
+
+                <button
+                    type="button"
+                    class="level-card"
+                    data-level="Intermediate"
+                >
+
+                    <span class="level-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Intermediate
+                        </h3>
+
+                        <p>
+                            Put your knowledge to the test.
+                        </p>
+
+                    </div>
+
+                    <span class="level-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <!-- Advanced -->
+
+                <button
+                    type="button"
+                    class="level-card"
+                    data-level="Advanced"
+                >
+
+                    <span class="level-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Advanced
+                        </h3>
+
+                        <p>
+                            Take on challenging questions.
+                        </p>
+
+                    </div>
+
+                    <span class="level-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>
+                    LearnHub
+                </h3>
+
+                <p>
+                    Where Learning Becomes Mastery.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="categories.html">
+                    Quizzes
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Lhteam@14. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+     <script src="js/app.js"></script>
+</body>
+
+</html>
