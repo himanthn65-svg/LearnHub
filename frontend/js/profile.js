@@ -3,7 +3,7 @@
 // Matches current profile.html + users.py
 // ============================================================
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://learnhub-ivo0.onrender.com";
 
 let currentUsername = "";
 let selectedProfileImage = null;
